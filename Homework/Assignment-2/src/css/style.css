@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --blue: #0083e0;
+    --salmon: #F5817D;
+    --darksalmon: #A8615E;
+}
+
+/* Navigation Bar */
+.nav {
+    background: var(--blue);
+    grid-area: nav;
+    text-align: center;
+    padding-right: 60px;
+    height: 75px;
+    padding-bottom: 10px;
+}
+
+.nav h1 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 36px;
+}
+
+nav a {
+    color: var(--salmon);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: var(--darksalmon);
+}
