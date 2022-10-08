@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --blue: #0083e0;
+  --salmon: #F5817D;
+  --darksalmon: #A8615E;
+}
+
+.button {
+  background-color: var(--blue); /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  border-radius: 25px;
+
+  position: absolute;
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Section Settings */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 46px;
+  background-color: black;
+}
+
+/* Header */
+header {
+  color: white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Text Rectangles */
+.rect {
+  width: 60rem;
+  height: 15rem;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
+
+/* Navigation Bar */
+.nav {
+  background: var(--blue);
+  grid-area: nav;
+  text-align: center;
+  padding-right: 60px;
+  height: 75px;
+  padding-bottom: 10px;
+}
+
+.nav h1 {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 36px;
+}
+
+nav a {
+  color: var(--salmon);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: var(--darksalmon);
+}
+
+/* Footer */
+footer {
+  background: var(--blue);
+  color: white;
+  font-family: "Arial";
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  grid-area: footer;
+}
+
+footer p {
+  padding: 10px;
+}
+
+footer h3 {
+  padding-top: 4px;
+}
+
+#about {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #005c9b;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+
+
+
