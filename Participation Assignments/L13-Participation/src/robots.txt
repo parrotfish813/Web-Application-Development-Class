@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: ec2-3-89-246-73.compute-1.amazonaws.com/sitemap.xml
