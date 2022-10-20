@@ -1,123 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ann's Air</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <link href="FP_navbar_styles.css" rel="stylesheet" type="text/css">
-    
-    <link rel="stylesheet" href="css/style.css" />
-
-
-  </head>  
-
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ann's Air</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarID">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link active" aria-current="page" href="#">Shop</a>
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-  </header>
-
-  <body onload='document.form1.text1.focus()'>
-  <div class="container">
-    <form class="row g-3 needs-validation" name="form1" novalidate>
-
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" class="form-control" id="form-first" placeholder="John" onkeyup="validateFirst()">
-        <span id="first-error"></span>
-      </div>
-
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="form-last" placeholder="Doe" onkeyup="validateLast()">
-        <span id="last-error"></span>
-      </div>
-
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Phone Number</label>
-        <input type="tel" class="form-control" id="form-phone" placeholder="123 456 789" onkeyup="validatePhone()">
-        <span id="phone-error"></span>
-      </div>
-
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Email</label>
-        <input type="email" class="form-control" id="form-email" placeholder="fillermail@filler.com" onkeyup="validateEmail()">
-        <span id="email-error"></span>
-      </div>
-
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Password</label>
-        <input type="password" class="form-control" id="form-password" onkeyup="validatePassword()">
-        <span id="password-error"></span>
-      </div>
-
-      <div>
-
-        <fieldset>
-          <legend>Select a subscription level:</legend>
+    <meta charset="utf-8"/>  
+    <title>Lab 9</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
       
-          <div>
-            <input type="radio" id="huey" name="drone" checked>
-            <label for="huey">Daily</label>
-          </div>
+    <script type="text/javascript" language="javascript" src="js/membershipForm.js"></script>
+  </head>
+
+  <body class="form-body">
+
+    <div class="form-box">
+      <h1>Registration</h1>
+
+      <form method="get" action="#" id="sampleForm">
+
+      <hr>
+      <label id="icon" for="name"><i class="fa fa-user fa-fw"></i></label>
+      <input type="text" name="name" id="name" placeholder="Name" />
+      <label id="icon" for="email"><i class="fa fa-phone fa-fw"></i></label>
+      <input type="text"  name="phone" id="phone" placeholder="Phone" pattern="[0-9]*"/>
+      <label id="icon" for="email"><i class="fa fa-envelope fa-fw"></i></label>
+      <input type="text" name="email" id="email" placeholder="Email" />    
+      <label id="icon" for="pass"><i class="fa fa-key fa-fw"></i></label>
+      <input type="password" name="pass" id="pass" placeholder="Password" />
+
+      <button type="submit" ><i class="fa fa-reply fa-fw"></i> Register</button> 
       
-          <div>
-            <input type="radio" id="dewey" name="drone">
-            <label for="dewey">Weekly</label>
-          </div>
-      
-          <div>
-            <input type="radio" id="louie" name="drone">
-            <label for="louie">Monthly</label>
-          </div>
-      </fieldset>
-
-      </div>
-
-    <div class="col-md-4">
-      <label for="validationCustom02" class="form-label">Air Quality</label>
-      <input list="quality">
-        <div>
-
-          <datalist id="quality">
-            <option value="Dumpster Air">
-            <option value="Regular Air">
-            <option value="Bahama's Air">
-          </datalist>
-
-        </div>
-
+      </form>
     </div>
-
-      <div class="col-12">
-        <input type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="CheckPassword(document.form1.text1)"/>
-      </div>
-
-      <div class="col-12">
-        <button class="btn btn-primary" type="reset">Reset</button>
-      </div>
-    </form>
-
-  </div>
-  <script src="js/membershipForm.js" type="text/js"></script>
+        
+    <div id="errors" class="visible">
+  </div>      
 
   </body>
-
 </html>

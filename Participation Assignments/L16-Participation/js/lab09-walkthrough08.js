@@ -5,6 +5,8 @@ function init() {
 window.addEventListener("load", init);
 
 function checkForEmptyFields(e) {  
+
+    checkEmail();
 	
 	var errorArea = document.getElementById("errors");
     errorArea.className = "hidden";
