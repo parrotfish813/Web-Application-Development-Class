@@ -1,20 +1,3 @@
-function validateFirst() {
-    var first = document.getElementById('form-first').value;
-
-    if(first.length == 0) {
-        return false;
-    }
-
-    if(!first.match(/^[A-Za-z]*\&)) {
-        return false;
-    }
-
-    else if(first.charAt(0) != first.charAt(0).toUpperCase()) {
-        first.charAt(0).toUpperCase() + first.slice(1);
-    }
-}
-
-
 function init() {
     document.getElementById("sampleForm").addEventListener("submit", checkForEmptyFields);    
 }
@@ -23,7 +6,11 @@ window.addEventListener("load", init);
 
 function checkForEmptyFields(e) {  
 
+    checkFirst();
+    checkLast();
     checkEmail();
+    checkPassword();
+    checkQuality();
 	
 	var errorArea = document.getElementById("errors");
     errorArea.className = "hidden";
@@ -54,6 +41,38 @@ function checkForEmptyFields(e) {
 
 }
 
+function checkFirst() {
+    var first = document.getElementById('first').value;
+
+    if(first.length == 0) {
+        return false;
+    }
+
+    if(!first.match([A-Za-z])) {
+        return false;
+    }
+
+    else if(first.charAt(0) != first.charAt(0).toUpperCase()) {
+        first.charAt(0).toUpperCase();
+    }
+}
+
+function checkFirst() {
+    var first = document.getElementById('last').value;
+
+    if(first.length == 0) {
+        return false;
+    }
+
+    if(!first.match([A-Za-z])) {
+        return false;
+    }
+
+    else if(first.charAt(0) != first.charAt(0).toUpperCase()) {
+        first.charAt(0).toUpperCase();
+    }
+}
+
 /*validate email */
 function checkEmail() {
 	var email = document.getElementById('email');
@@ -64,4 +83,26 @@ function checkEmail() {
 		email.focus;
 		return false;
 	}
+}
+
+function checkPassword() { 
+    var password = document.getElementById('password');
+    var filter = /^[A-Za-z]\w{7,14}$/;
+    if(password.value.match(filter)) { 
+        alert('Correct, try another...')
+        return true;
+    }
+    else { 
+        alert('Wrong...!')
+        return false;
+    }
+}
+
+function checkQuality() {
+    if(document.getElementById('quality').checked) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }

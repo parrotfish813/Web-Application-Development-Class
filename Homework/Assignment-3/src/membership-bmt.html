@@ -1,39 +1,188 @@
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8"/>  
-    <title>Lab 9</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+<!doctype html>
+<html lang="en">
+
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.72.0">
+      <title>Nerdy John's</title>
+
+      <link rel="stylesheet" href="css/style.css" />
+
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+      <script type="text/javascript" language="javascript" src="js/membershipForm.js"></script>
+
+    </head>
+   
+   <body>
+
+      <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+         <div class="container-fluid">
+               <a class="navbar-brand" href="#">Nerdy John's</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+               <ul class="navbar-nav mr-auto mb-2 mb-md-0">
+                  <li class="nav-item active">
+                     <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Store</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+               </ul>
+               <form class="d-flex">
+                  <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+               </form>
+               </div>
+         </div>
+         </nav>
+      </header>
+
+  <main>
+
+  <form method="get" action="#" id="sampleForm">
+    <div class="form-con">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control" id="first" placeholder="John" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="last" placeholder="Doe" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Phone Number</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend">#</span>
+            <input type="tel" class="form-control" id="phone" aria-describedby="inputGroupPrepend" pattern="[0-9]*" required>
+            <div class="invalid-feedback">
+              Please enter a valid name.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please enter a valid name.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom03" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+          <div class="invalid-feedback">
+            Please provide a valid password.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <legend>Air Quality:</legend><br>
+          <input list="air-quality" id="quality">
+    
+          <datalist id="air-quality">
+            <option value="Dumpster">
+            <option value="Stale">
+            <option value="Fresh">
+            <option value="Mountain">
+            <option value="Ocean Breeze">
+          </datalist>
+        </div>
+
+        <fieldset>
+          <legend>Select a subscription level:</legend>
       
-    <script type="text/javascript" language="javascript" src="js/membershipForm.js"></script>
-  </head>
-
-  <body class="form-body">
-
-    <div class="form-box">
-      <h1>Registration</h1>
-
-      <form method="get" action="#" id="sampleForm">
-
-      <hr>
-      <label id="icon" for="name"><i class="fa fa-user fa-fw"></i></label>
-      <input type="text" name="name" id="name" placeholder="Name" />
-      <label id="icon" for="email"><i class="fa fa-phone fa-fw"></i></label>
-      <input type="text"  name="phone" id="phone" placeholder="Phone" pattern="[0-9]*"/>
-      <label id="icon" for="email"><i class="fa fa-envelope fa-fw"></i></label>
-      <input type="text" name="email" id="email" placeholder="Email" />    
-      <label id="icon" for="pass"><i class="fa fa-key fa-fw"></i></label>
-      <input type="password" name="pass" id="pass" placeholder="Password" />
-
-      <button type="submit" ><i class="fa fa-reply fa-fw"></i> Register</button> 
+          <div>
+            <input type="radio" id="huey" name="drone" value="huey" >
+            <label for="huey">Daily</label>
+          </div>
       
-      </form>
-    </div>
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Weekly</label>
+          </div>
+      
+          <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Monthly</label>
+          </div>
+        </fieldset>
+    
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
         
-    <div id="errors" class="visible">
-  </div>      
+        <div class="col-12">
+          <button class="btn btn-primary" type="reset">Reset</button>
+        </div>
+      
+    </form>
 
-  </body>
+    <div id="errors" class="visible">
+
+  </div>
+
+  </main>
+
+      <!-- FOOTER -->
+      <footer>
+         <p class="float-right"><a href="#">Back to top</a></p>
+
+         <div id="contact">
+            <h3>Contact Us</h3>
+
+            <!-- Phone Number -->
+            <div class="card-group d-inline-flex p-2">
+               <picture>
+                  <source media="(max-width:650px)" srcset="img/blank.png">
+                  <img src="img/phone-icon.png" alt="Phone" style="width:auto;" class="icon">
+               </picture>
+               <div> &nbsp;407-333-2273 &nbsp;</div>
+
+               <!-- Email -->
+               <picture>
+                  <source media="(max-width:650px)" srcset="img/blank.png">
+                  <img src="img/email-icon.png" alt="Email" style="width:auto;" class="icon">
+               </picture>
+               <div> &nbsp; johnnybs@gmail.com &nbsp;</div>
+
+               <!-- Instagram -->
+               <picture>
+                  <source media="(max-width:650px)" srcset="img/blank.png">
+                  <img src="img/instagram-icon.png" alt="Instagram" style="width:auto;" class="icon">
+               </picture>
+               <div> &nbsp; @johnnybs</div>
+            </div>
+         </div>
+
+         <!-- Copyright -->
+         <p>&copy; 2017-2020 Johnny B's. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>   
+      </footer>
+   </body>
+
 </html>
