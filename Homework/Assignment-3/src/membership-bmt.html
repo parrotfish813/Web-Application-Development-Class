@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 
-   <head>
+  <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
       <meta name="generator" content="Hugo 0.72.0">
-      <title>Nerdy John's</title>
+      <meta name="robots" content="noindex">
+
+      <title>Vehicle Birds</title>
 
       <link rel="stylesheet" href="css/style.css" />
 
@@ -20,130 +20,125 @@
       <script type="text/javascript" language="javascript" src="js/membershipForm.js"></script>
 
     </head>
-   
-   <body>
+
+  <body>
 
       <header>
-         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-         <div class="container-fluid">
-               <a class="navbar-brand" href="#">Nerdy John's</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarCollapse">
-               <ul class="navbar-nav mr-auto mb-2 mb-md-0">
-                  <li class="nav-item active">
-                     <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">Store</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#contact">Contact</a>
-                  </li>
-               </ul>
-               <form class="d-flex">
-                  <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-               </form>
-               </div>
-         </div>
-         </nav>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Vehicle Birds</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+            
+            <form class="d-flex">
+              <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        </nav>
       </header>
 
   <main>
 
-  <form method="get" action="#" id="sampleForm">
-    <div class="form-con">
-      <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
-          <label for="validationCustom01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="first" placeholder="John" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="last" placeholder="Doe" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Phone Number</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend">#</span>
-            <input type="tel" class="form-control" id="phone" aria-describedby="inputGroupPrepend" pattern="[0-9]*" required>
-            <div class="invalid-feedback">
-              Please enter a valid name.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Email</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
-            <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required>
-            <div class="invalid-feedback">
-              Please enter a valid name.
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustom03" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" required>
-          <div class="invalid-feedback">
-            Please provide a valid password.
-          </div>
-        </div>
+<!-- FORM -->
+<div class="form-con">
+  <form method="get" action="#" id="purchaseForm">
+  
+  <!-- Form Name -->
+  <div id="formSubmit" class="visible"></div><br>
+  <center><h2><b>Purchase Form</b></h2></center><br>
+  
+  <!-- Text input First Name-->
+  <label class="form-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <input type="text" class="form-control" placeholder="First Name" id="fname" aria-describedby="inputGroupPrepend">
+  </div>
+  
+  
+  <!-- Text input Last Name-->
+    <label class="col-md-4 control-label" >Last Name</label> 
+      <div class="col-md-4 inputGroupContainer">
+        <input type="text" class="form-control" placeholder="Last Name" id="lname" aria-describedby="inputGroupPrepend">
+      </div>
+  
+  
+  <!-- Text input Phone Number-->
+    <label class="col-md-4 form-label">Phone Number</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <input type="text" class="form-control" placeholder="Phone" id="phone" aria-describedby="inputGroupPrepend">
+      <div class="invalid-feedback">
+        Please enter a valid Phone Number.
+      </div>
+      </div>
+  
+  
+  <!-- Text input Email-->
+    <label class="col-md-4 control-label">Email</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <input type="text" class="form-control" placeholder="Email" id="email" aria-describedby="inputGroupPrepend">
+      <div class="invalid-feedback">
+        Please enter a valid Email.
+      </div>
+      </div>
+  
+  <!-- Password input Password -->
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+  <input type="password" class="form-control" placeholder="Password" id="password" aria-describedby="inputGroupPrepend">
+  <div class="invalid-feedback">
+    Please provide a valid password.
+  </div>  
+  </div>
+  
+  <!-- List input Subscription Level -->
+    <label class="col-md-4 control-label">Kits Desired:</label>
+      <div class="col-md-4 selectContainer">
+      <select name="kits" class="form-control selectpicker" id="kits">
+        <option>All of the Vehicle Kits</option>
+        <option>Motorcycle Copter Kits</option>
+        <option>Convertible Copter Kits</option>
+        <option>Small Car Copter Kits</option>
+        <option>SUV Copter Kits</option>
+      </select>
+    </div>
 
-        <div class="col-md-4">
-          <legend>Air Quality:</legend><br>
-          <input list="air-quality" id="quality">
-    
-          <datalist id="air-quality">
-            <option value="Dumpster">
-            <option value="Stale">
-            <option value="Fresh">
-            <option value="Mountain">
-            <option value="Ocean Breeze">
-          </datalist>
-        </div>
+  <!-- Radio Buttons input Quality -->
+    <label class="col-md-4 control-label" >Quality: </label> 
+    <div class="col-md-4 selectContainer">
+      <input type="radio" id="plastic" name="quality" value="plastic">
+      <label>Plastic</label><br>
+      <input type="radio" id="metal" name="quality" value="metal">
+      <label>Metal</label><br>
+      <input type="radio" id="titanium" name="quality" value="titanium">
+      <label>Titanium</label>
+    </div>
 
-        <fieldset>
-          <legend>Select a subscription level:</legend>
-      
-          <div>
-            <input type="radio" id="huey" name="drone" value="huey" >
-            <label for="huey">Daily</label>
-          </div>
-      
-          <div>
-            <input type="radio" id="dewey" name="drone" value="dewey">
-            <label for="dewey">Weekly</label>
-          </div>
-      
-          <div>
-            <input type="radio" id="louie" name="drone" value="louie">
-            <label for="louie">Monthly</label>
-          </div>
-        </fieldset>
-    
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
-        </div>
-        
-        <div class="col-12">
-          <button class="btn btn-primary" type="reset">Reset</button>
-        </div>
-      
-    </form>
-
-    <div id="errors" class="visible">
+  <!-- Submit and Reset Button's -->
+  <br>
+  <div class="col-md-4">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+  
+  </form>
+  <div id="errors" class="visible"></div><br>
 
   </div>
 
@@ -151,38 +146,29 @@
 
       <!-- FOOTER -->
       <footer>
-         <p class="float-right"><a href="#">Back to top</a></p>
+        <p class="float-right"><a href="#">Back to top</a></p>
 
-         <div id="contact">
-            <h3>Contact Us</h3>
+        <div id="contact">
+          <h3>Contact Us</h3>
 
-            <!-- Phone Number -->
-            <div class="card-group d-inline-flex p-2">
-               <picture>
-                  <source media="(max-width:650px)" srcset="img/blank.png">
-                  <img src="img/phone-icon.png" alt="Phone" style="width:auto;" class="icon">
-               </picture>
-               <div> &nbsp;407-333-2273 &nbsp;</div>
+          <!-- Phone Number -->
+          <div class="card-group d-inline-flex p-2">
+            <img src="img/phone-icon.png" alt="Phone" style="width:auto;" class="icon">
+            <div> &nbsp; 407-834-2473 &nbsp;</div>
 
-               <!-- Email -->
-               <picture>
-                  <source media="(max-width:650px)" srcset="img/blank.png">
-                  <img src="img/email-icon.png" alt="Email" style="width:auto;" class="icon">
-               </picture>
-               <div> &nbsp; johnnybs@gmail.com &nbsp;</div>
+            <!-- Email -->
+          <img src="img/email-icon.png" alt="Email" style="width:auto;" class="icon">
+          <div> &nbsp; vehiclebirds@gmail.com &nbsp;</div>
 
-               <!-- Instagram -->
-               <picture>
-                  <source media="(max-width:650px)" srcset="img/blank.png">
-                  <img src="img/instagram-icon.png" alt="Instagram" style="width:auto;" class="icon">
-               </picture>
-               <div> &nbsp; @johnnybs</div>
-            </div>
-         </div>
+          <!-- Instagram -->
+          <img src="img/instagram-icon.png" alt="Instagram" style="width:auto;" class="icon">
+          <div> &nbsp; @vehiclebirds</div>
+          </div>
+        </div>
 
-         <!-- Copyright -->
-         <p>&copy; 2017-2020 Johnny B's. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>   
+        <!-- Copyright -->
+        <p>&copy; 2017-2020 Vehicle Birds. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>   
       </footer>
-   </body>
+  </body>
 
 </html>

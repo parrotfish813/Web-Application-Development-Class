@@ -1,17 +1,27 @@
-function init() {
-    document.getElementById("sampleForm").addEventListener("submit", checkForEmptyFields);    
-}
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("purchaseForm").addEventListener("submit", checkForEmptyFields); 
+    // document.getElementById("purchaseForm").addEventListener("submit", submitDisplay); 
+});
 
-window.addEventListener("load", init);
+window.addEventListener("load", function() {
+    var cssSelector = "input[type=text],input[type=password]";
+    const fields = document.querySelectorAll(cssSelector);
+
+    for(let f of fields) {
+        f.addEventListener("focus", setBackground);
+        f.addEventListener("blur", setBackground);
+    }  
+});
 
 function checkForEmptyFields(e) {  
 
     checkFirst();
     checkLast();
+    checkPhoneNumber();
     checkEmail();
     checkPassword();
     checkQuality();
-	
+
 	var errorArea = document.getElementById("errors");
     errorArea.className = "hidden";
 
@@ -28,81 +38,131 @@ function checkForEmptyFields(e) {
             fieldList.push(fields[i]);
         }
     }
+
     // now set up the error message
     var msg = "The following fields can't be empty: ";
     if (fieldList.length > 0) {
         for (i=0; i<fieldList.length; i++) {
-            msg += fieldList[i].id + ",";
+            msg += fieldList[i].id + ", ";
         }
 
         errorArea.innerHTML = "<p>" + msg + "</p>";
         errorArea.className = "visible";    
 	}
 
+    if(checkFirst() && checkLast() && checkPhoneNumber() && checkEmail() && checkPassword() && checkQuality()) {
+        isGood();
+    }    
+
 }
 
+/* validate first */
 function checkFirst() {
-    var first = document.getElementById('first').value;
+    var first = document.getElementById('fname').value;
 
-    if(first.length == 0) {
-        return false;
-    }
-
-    if(!first.match([A-Za-z])) {
-        return false;
-    }
-
-    else if(first.charAt(0) != first.charAt(0).toUpperCase()) {
+    if(first.charAt(0) != first.charAt(0).toUpperCase()) {
         first.charAt(0).toUpperCase();
+        return true;
     }
+    
+    return true;
+
 }
 
-function checkFirst() {
-    var first = document.getElementById('last').value;
+/* validate last name */
+function checkLast() {
+    var last = document.getElementById('lname').value;
 
-    if(first.length == 0) {
-        return false;
+    if(last.charAt(0) != last.charAt(0).toUpperCase()) {
+        last.charAt(0).toUpperCase();
+        return true;
     }
+    
+    return true;
 
-    if(!first.match([A-Za-z])) {
-        return false;
-    }
-
-    else if(first.charAt(0) != first.charAt(0).toUpperCase()) {
-        first.charAt(0).toUpperCase();
-    }
 }
 
-/*validate email */
+/* validate phone number */
+function checkPhoneNumber() {
+    var phone = document.getElementById('phone');
+    var filterPhone = /^\(?([0-9]{3})\)?[- ]?([0-9]{3})[- ]?([0-9]{4})$/;
+    
+    if (!filterPhone.test(phone.value)) {
+		alert('Please provide a valid phone number');
+		phone.focus;
+		return false;
+	}
+
+    return true;
+
+}
+
+/* validate email */
 function checkEmail() {
 	var email = document.getElementById('email');
-	var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var filterEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	
-	if (!filter.test(email.value)) {
+	if (!filterEmail.test(email.value)) {
 		alert('Please provide a valid email address');
 		email.focus;
 		return false;
 	}
+
+    return true;
 }
 
-function checkPassword() { 
+/* validate password */
+function checkPassword() {
     var password = document.getElementById('password');
-    var filter = /^[A-Za-z]\w{7,14}$/;
-    if(password.value.match(filter)) { 
-        alert('Correct, try another...')
+    var filterPassword = /^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,9})$/;
+
+	if (!filterPassword.test(password.value)) {
+		alert('Please provide a valid password');
+		password.focus;
+		return false;
+	}
+
+    return true;
+}
+
+/* validate quality */
+function checkQuality() {
+    if(document.getElementById('plastic').checked == true) {
         return true;
     }
-    else { 
-        alert('Wrong...!')
+
+    else if(document.getElementById('metal').checked == true) {
+        return true;
+    }
+
+    else if(document.getElementById('titanium').checked == true) {
+        return true;
+    }
+
+    else {
+        alert("please enter a quality");  
         return false;
     }
 }
 
-function checkQuality() {
-    if(document.getElementById('quality').checked) {
-        return true;
+/*  set input box focus color */
+function setBackground(e) {
+
+    if(e.type == "focus") {
+        e.target.style.backgroundColor = "#FFE393";
     }
-    else {
-        return false;
+
+    else if(e.type == "blur") {
+        e.target.style.backgroundColor = "white";
     }
+
+};
+
+function isGood() {
+
+    var submitted = document.getElementById("formSubmit");
+    submitted.className = "hidden";
+    submitted.innerHTML = "<p>" + "Submitted!!!" + "</p>";
+    submitted.className = "visible";
+
 }
