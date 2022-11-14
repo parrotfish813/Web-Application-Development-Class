@@ -73,6 +73,9 @@ form select {
     border-color: #FF1744;    
 }
 
+.validation_error {
+   color: red;
+}
 
 
 .btn {
